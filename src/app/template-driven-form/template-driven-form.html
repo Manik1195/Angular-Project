@@ -1,0 +1,93 @@
+<div class="main">
+  <div class="container">
+    <h3>User Details</h3>
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <!-- <pre>valid:{{ userForm.valid }}</pre> -->
+      <!-- <pre>Values:{{ userForm.value | json }}</pre>
+      <pre>touched:{{ userForm.touched }}</pre>
+      <pre>Untouched:{{ userForm.untouched }}</pre>
+      <pre>valid:{{ userForm.valid }}</pre>
+      <pre>Invalid:{{ userForm.invalid }}</pre>
+      <pre>submitted:{{ userForm.submitted }}</pre> -->
+      <div class="inputs">
+        <label>FirstName</label>
+        <input
+          type="text"
+          name="firstname"
+          #fname="ngModel"
+          [(ngModel)]="UserInfo.firstName"
+          required
+        />
+      </div>
+      @if (fname.dirty || fname.touched) {
+        @if (fname?.errors?.['required']) {
+          <small class="error">Firstname is required</small>
+        }
+      }
+      <div class="inputs">
+        <label>LastName</label>
+        <input
+          type="text"
+          name="lastname"
+          #lastname="ngModel"
+          [(ngModel)]="UserInfo.lastName"
+          required
+        />
+      </div>
+      @if (lastname.dirty || lastname.touched) {
+        @if (lastname?.errors?.['required']) {
+          <small class="error">lastname is required</small>
+        }
+      }
+      <div class="inputs">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          #email="ngModel"
+          [(ngModel)]="UserInfo.email"
+          email
+          required
+        />
+      </div>
+      @if (email.dirty || email.touched) {
+        @if (email?.errors?.['required']) {
+          <small class="error">Email is required is required</small>
+        }
+        @if (email?.errors?.['email']) {
+          <small class="error">The email should be in @ format</small>
+        }
+      }
+      <div class="inputs">
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          #password="ngModel"
+          [(ngModel)]="UserInfo.password"
+          minlength="6"
+          required
+        />
+      </div>
+      @if (password.dirty || password.touched) {
+        @if (password?.errors?.['required']) {
+          <small class="error">Password Field is required</small>
+        }
+        @if (password?.errors?.['minlength']) {
+          <small class="error">The minimum character should be 6</small>
+        }
+      }
+      <div class="check">
+        <input type="checkbox" name="check" [(ngModel)]="UserInfo.check" />
+        <label>Check me</label>
+      </div>
+
+      <div class="inputs">
+        <button type="submit" [disabled]="!userForm.valid">Click</button>
+        <button [ngClass]="applyStyle" (click)="click(userForm)">SetValues</button>
+        <button class="patch" (click)="Patch(userForm)">Patch Values</button>
+        <button [ngClass]="resetstyle" (click)="Reset(userForm)">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>

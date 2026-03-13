@@ -1,0 +1,94 @@
+.table-container {
+  width: 80%;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.title {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.modern-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.modern-table thead {
+  background: linear-gradient(135deg, #5bcbc6ed, #9f66d9db);
+  color: white;
+}
+
+.modern-table th {
+  padding: 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.modern-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.modern-table tbody tr:hover {
+  background: #f5f7ff;
+  transition: 0.3s;
+}
+
+.name {
+  font-weight: 600;
+  color: #222;
+}
+
+.salary {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.role-badge {
+  background: #e0e7ff;
+  color: #4338ca;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.head button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #009688;
+  width: 150px;
+}
+.edit {
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: green;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #4caf50, #8bc34a, #009688) 1;
+  width: 100px;
+}
+.delete {
+  border: none;
+  outline: none;
+  padding: 5px;
+  background-color: #fff;
+  border: 3px solid;
+  border-radius: 10px;
+  border-image: linear-gradient(45deg, #ff5722, #f44336, #f48fb1) 1;
+  width: 100px;
+}

@@ -1,0 +1,36 @@
+<div class="table-container">
+  <div class="head">
+    <h2 class="title">Employee List</h2>
+    <button (click)="User()">Add User</button>
+  </div>
+
+  <table class="modern-table">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Salary</th>
+        <th>Role</th>
+        <th>Update</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let data of dummyData">
+        <td>{{ data.id }}</td>
+        <td class="name">{{ data.name }}</td>
+        <td class="salary">{{ data.salary | currency: 'INR' }}</td>
+        <td>
+          <span class="role-badge">{{ data.Role }}</span>
+        </td>
+        <td>
+          <button class="edit" (click)="edit(data.id)">Edit</button>
+        </td>
+        <td>
+          <button class="delete">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

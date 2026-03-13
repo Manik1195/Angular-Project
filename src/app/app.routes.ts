@@ -1,3 +1,27 @@
 import { Routes } from '@angular/router';
+import { Demo } from './demo/demo';
+import { Sample } from './sample/sample';
+import { Employee } from './employee/employee';
+import { PageNotFound } from './page-not-found/page-not-found';
+import { User } from './user/user';
+import { Pipes } from './pipes/pipes';
+import { Form } from './form/form';
+import { TemplateDrivenForm } from './template-driven-form/template-driven-form';
+import { ReactiveForm } from './reactive-form/reactive-form';
+import { Profile } from './profile/profile';
+import { AddUser } from './add-user/add-user';
+import { Updateuser } from './updateuser/updateuser';
 
-export const routes: Routes = [];
+export const routes: Routes = [
+  { path: 'demo', component: Demo },
+  { path: 'sample', component: Sample },
+  { path: 'profile', component: Profile },
+  { path: 'employee', component: Employee },
+  { path: 'user', component: User },
+  { path: 'pipes', component: Pipes },
+  { path: 'tform', component: TemplateDrivenForm },
+  { path: 'rform', component: ReactiveForm },
+  { path: 'adduser', component: AddUser },
+  { path: 'updateuser/:id', component: Updateuser },
+  { path: '**', component: PageNotFound },
+];

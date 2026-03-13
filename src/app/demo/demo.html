@@ -1,0 +1,47 @@
+<!-- <div class="top">
+  <h2>Hi {{ dummyData.name }}</h2>
+</div> -->
+<div class="main">
+  <div class="container">
+    <div class="one">
+      <p>{{ name }}</p>
+      <p>{{ id }}</p>
+      <img [src]="image" />
+    </div>
+    <div class="two">
+      <button (click)="onSave()">Click</button>
+      <select (change)="onChange()">
+        <option value="country">country</option>
+        <option value="India">India</option>
+        <option value="France">France</option>
+        <option value="Norway">Norway</option>
+      </select>
+      <input type="text" [(ngModel)]="name" />
+      {{ name }}
+    </div>
+  </div>
+  <div class="container1">
+    <div class="heading">
+      <h2>Heading</h2>
+      @if (!isClicked) {
+        <button (click)="perform()">+</button>
+      }
+      @if (isClicked) {
+        <button (click)="perform()">-</button>
+      }
+    </div>
+    @if (isClicked) {
+      <div class="box">
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+          been the industry's standard dummy text ever since the 1500s, when an unknown printer took
+          a galley of type and scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting, remaining essentially
+          unchanged. It was popularised in the 1960s with the release of Letraset sheets containing
+          Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
+          PageMaker including versions of Lorem Ipsum.
+        </p>
+      </div>
+    }
+  </div>
+</div>

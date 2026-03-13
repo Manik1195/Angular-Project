@@ -1,0 +1,23 @@
+<div class="main">
+  <div><input type="checkbox" (click)="onChange()" />Terms & Conditions</div>
+  @if (isChecked) {
+    <button>Submit</button>
+  }
+  @if (IsInput) {
+    <div>
+      <input type="text" value="Manik" />
+    </div>
+  }
+  <button (click)="showInput()">Show</button>
+  <button (click)="hideInput()">Hide</button>
+
+  <div class="container">
+    <input type="text" [(ngModel)]="input1" />
+    <input type="text" [(ngModel)]="input2" />
+    @if (input1 || input2) {
+      <div>
+        <h4>{{ input1 === input2 ? 'Both are equal' : 'Both are not equal' }}</h4>
+      </div>
+    }
+  </div>
+</div>

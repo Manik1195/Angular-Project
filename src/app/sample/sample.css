@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 10px;
+}
+.main {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  gap: 10px;
+}
+button {
+  background-color: green;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+}

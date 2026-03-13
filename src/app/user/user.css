@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  margin-top: 40px;
+  gap: 20px;
+}
+.inputs {
+  display: flex;
+}
+.inputs button {
+  outline: none;
+  border: none;
+  padding: 5px;
+  background-color: blueviolet;
+  border-radius: 5px;
+  color: #fff;
+  width: 100px;
+  margin-left: 20px;
+}
+.inputs input {
+  border: none;
+  border-bottom: 1px solid#cfcece;
+}
+.inputs label {
+  width: 100px;
+}

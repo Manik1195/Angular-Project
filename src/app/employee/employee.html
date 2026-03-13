@@ -1,0 +1,89 @@
+<div class="container">
+  <select>
+    @for (emp of employees; track emp.empid) {
+      <option [value]="emp.empname">{{ emp.empid + '-' + emp.empname }}</option>
+    }
+  </select>
+  <div>
+    <table class="table">
+      <thead class="head">
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Qualification</th>
+        </tr>
+      </thead>
+      @for (emp of employees; track emp.empid) {
+        <tbody>
+          <tr>
+            <td>{{ emp.empid }}</td>
+            <td>{{ emp.empname }}</td>
+            <td>{{ emp.empqualification }}</td>
+          </tr>
+        </tbody>
+      }
+    </table>
+  </div>
+  <div>
+    <ul>
+      @for (company of companies; track company) {
+        <li>{{ company }}</li>
+      }
+    </ul>
+  </div>
+  <div>
+    @for (company of companies; track company) {
+      <button (click)="onSubmit(company)">{{ company }}</button>
+    }
+  </div>
+  <button (click)="perform()">Get Result</button>
+  @if (isClicked) {
+    @for (mark of marks; track mark) {
+      <div class="display">
+        <div class="content">
+          <p>Engish</p>
+          <p>{{ mark.english }}</p>
+        </div>
+        <div class="main">
+          <div class="mark1" [style.width]="mark.english + '%'"></div>
+        </div>
+      </div>
+      <div class="display">
+        <div class="content">
+          <p>Maths</p>
+          <p>{{ mark.maths }}</p>
+        </div>
+        <div class="main">
+          <div class="mark2" [style.width]="mark.maths + '%'"></div>
+        </div>
+      </div>
+      <div class="display">
+        <div class="content">
+          <p>Science</p>
+          <p>{{ mark.science }}</p>
+        </div>
+        <div class="main">
+          <div class="mark3" [style.width]="mark.science + '%'"></div>
+        </div>
+      </div>
+      <div class="display">
+        <div class="content">
+          <p>Social</p>
+          <p>{{ mark.social }}</p>
+        </div>
+        <div class="main">
+          <div class="mark4" [style.width]="mark.social + '%'"></div>
+        </div>
+      </div>
+      <div class="display">
+        <div class="content">
+          <p>General Knowledge</p>
+          <p>{{ mark.general }}</p>
+        </div>
+        <div class="main">
+          <div class="mark4" [style.width]="mark.general + '%'"></div>
+        </div>
+      </div>
+    }
+  }
+</div>
