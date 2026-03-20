@@ -1,0 +1,27 @@
+<div class="container">
+  @for (pro of data(); track pro.id) {
+    <div class="main">
+      <div class="image">
+        <h2>{{ pro.name }}</h2>
+      </div>
+      <div class="item">
+        <div class="name">
+          <label>Product Name:</label>
+          <p>{{ pro.name }}</p>
+        </div>
+        <div class="category">
+          <label>Category:</label>
+          <p>{{ pro.category }}</p>
+        </div>
+        <div class="price">
+          <label>Price:</label>
+          <p>{{ pro.price | currency: 'INR' }}</p>
+        </div>
+        <div class="color">
+          <label>Color:</label>
+          <p>{{ pro.color }}</p>
+        </div>
+      </div>
+    </div>
+  }
+</div>

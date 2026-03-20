@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Crudservice } from '../crudservice';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Iuser } from '../iuser';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-updateuser',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './updateuser.html',
   styleUrl: './updateuser.css',
 })
@@ -16,6 +16,7 @@ export class Updateuser implements OnInit {
     private crud: Crudservice,
     private activeroute: ActivatedRoute,
     private fb: FormBuilder,
+    private router: Router,
   ) {
     this.updateForm = this.fb.group({
       name: [''],
@@ -31,6 +32,15 @@ export class Updateuser implements OnInit {
 
     this.crud.getDataById(this.id).subscribe((res) => {
       this.user = res;
+      this.updateForm.patchValue(this.user);
+    });
+  }
+  cancel() {
+    this.router.navigateByUrl('profile');
+  }
+  onSubmit() {
+    this.crud.putDataByID(this.id, this.updateForm.value).subscribe((res) => {
+      this.router.navigateByUrl('profile');
     });
   }
 }

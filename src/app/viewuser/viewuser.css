@@ -1,0 +1,121 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: auto;
+  margin-top: 100px;
+
+  border-radius: 10px;
+
+  box-shadow: 0px 10px 10px #eee;
+
+  margin-bottom: 30px;
+}
+h2 {
+  text-align: center;
+  color: #fafafa;
+  font-family: 'Lato';
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+.heading {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  background-color: #79bfe1;
+  gap: 15px;
+}
+.icon {
+  border-top-left-radius: 10px;
+  padding: 0 25px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  background-color: #32aae6;
+}
+.heading i {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #fff;
+  font-size: 25px;
+}
+/* .data {
+  display: flex;
+  flex-flow: column;
+
+  gap: 10px;
+  margin-top: 20px;
+  color: #444;
+  font-size: 18px;
+  letter-spacing: 1.2px;
+  padding-bottom: 20px;
+  padding: 10px;
+  margin-top: 30px;
+  border-radius: 10px;
+  font-family: 'montserrat';
+  /* background-color: #efeeee; */
+/* margin-bottom: 25px; */
+/* box-shadow: 0px 0px 5px #919191; */
+
+.data {
+  display: flex;
+
+  justify-content: center;
+}
+.lbl {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: #fafafa;
+  width: 100%;
+  gap: 5px;
+  font-weight: bold;
+  font-family: 'Raleway';
+  letter-spacing: 1.2px;
+  padding: 30px 0;
+  padding-right: 10px;
+}
+.value {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  width: 100%;
+
+  font-family: 'Raleway';
+  gap: 5px;
+  padding: 30px 0;
+  padding-left: 10px;
+  background-color: #eee;
+}
+button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  border: 5px solid #8dcbea;
+  color: #32aae6;
+  background-color: #fff;
+  width: 120px;
+  font-size: 16px;
+  letter-spacing: 1.2px;
+  font-family: 'Montserrat';
+  border-radius: 10px;
+  margin-bottom: 20px;
+  width: 300px;
+}
+button:hover {
+  border: 5px solid #699ab6;
+  transition: 0.6s;
+}
+label {
+  width: 60px;
+}
+.name,
+.salary,
+.role {
+  display: flex;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  background-color: #7bbdde;
+}

@@ -1,0 +1,134 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 700px;
+  margin: auto;
+  margin-top: 50px;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0px 0px 10px #eee;
+  margin-bottom: 30px;
+}
+.inputs {
+  margin-top: 25px;
+  display: flex;
+  gap: 10px;
+}
+.inputs input {
+  width: 90%;
+  padding: 10px;
+  border: none;
+  background-color: #fff;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+.inputs label {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  color: #444;
+}
+.inputs button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: rgb(160, 79, 236);
+  border-radius: 10px;
+  width: 120px;
+  color: white;
+}
+.inputs button:hover {
+  background: #b184db;
+  transition: 0.6s;
+}
+.inputs button:disabled {
+  background-color: rgb(160, 79, 236);
+  opacity: 0.5;
+}
+.container h2 {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+.marks {
+  padding: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  animation: animate 0.6s;
+}
+@keyframes animate {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(20px);
+  }
+}
+.candidate {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+}
+.score {
+  margin-top: 30px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 10px;
+}
+.main {
+  height: 5px;
+  background-color: #fafafa;
+}
+.eng,
+.maths,
+.science,
+.generalawarness {
+  background-color: blueviolet;
+  height: 5px;
+  transition: width 0.8s ease;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+.error {
+  color: red;
+  font-weight: 600;
+  background-color: #eee;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  text-align: center;
+}
+.show {
+  color: red;
+  margin-left: 130px;
+  margin-top: 10px;
+}
+.btn {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+.inputs .reset {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background-color: #607d8b;
+  border-radius: 10px;
+  width: 120px;
+  color: white;
+}
+.inputs .reset:hover {
+  background-color: #85959d;
+  transition: 0.6s;
+}
+.inputs::placeholder {
+  color: #f5f5f5;
+}

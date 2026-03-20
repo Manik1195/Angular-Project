@@ -1,0 +1,25 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Samsung s25 ultra",
+      "price": 100000,
+      "category": "Mobile Phone",
+      "color": "Black"
+    },
+    {
+      "id": 2,
+      "name": "Google Pixel 10",
+      "price": 80000,
+      "category": "Mobile Phone",
+      "color": "White"
+    },
+    {
+      "id": 3,
+      "name": "Wireless one plus bulletz",
+      "price": 1500,
+      "category": "HeadPhone",
+      "color": "Red"
+    }
+  ]
+}

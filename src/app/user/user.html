@@ -1,22 +1,36 @@
 <div class="container">
-  <h2>Login</h2>
-  <div class="inputs">
-    <label>Username</label>
-    <input type="text" />
-  </div>
-  <div class="inputs">
-    <label>Password</label>
-    <input type="text" />
-  </div>
-  <div class="inputs">
-    <button (click)="click()">Login</button>
-  </div>
-  <!-- <div class="inputs">
-    <button (click)="perform()">Click</button>
-  </div>
-  @if (isClicked) {
-    <div class="inputs">
-      <input type="text" />
+  <form [formGroup]="loginForm" (ngSubmit)="click()">
+    <div class="left">
+      <h2>Login</h2>
+      <div class="inputs">
+        <label>Username</label>
+        <input type="text" formControlName="username" />
+      </div>
+      @if (loginForm.controls['username']?.dirty || loginForm.controls['username']?.touched) {
+        @if (loginForm.controls['username']?.errors?.['required']) {
+          <small class="error">Username is required</small>
+        }
+      }
+      <div class="inputs">
+        <label>Password</label>
+        <input type="text" formControlName="password" />
+      </div>
+      @if (loginForm.controls['password']?.dirty || loginForm.controls['password']?.touched) {
+        @if (loginForm.controls['password']?.errors?.['required']) {
+          <small class="error">Password is required</small>
+        }
+      }
+      <div class="inputs-btn">
+        <button [disabled]="loginForm.invalid">Login</button>
+      </div>
     </div>
-  } -->
+  </form>
+  <div class="right">
+    <div class="content">
+      <p>Are You new to this site,Then Register here</p>
+    </div>
+    <div class="btn">
+      <button (click)="register()">Register Here</button>
+    </div>
+  </div>
 </div>

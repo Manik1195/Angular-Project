@@ -1,0 +1,31 @@
+{
+  "marks": [
+    {
+      "id": 1,
+      "name": "Manik",
+      "rollnumber": 101,
+      "english": 70,
+      "maths": 75,
+      "generalawarness": 80,
+      "science": 70
+    },
+    {
+      "id": 2,
+      "name": "Vishwa",
+      "rollnumber": 102,
+      "english": 75,
+      "maths": 75,
+      "generalawarness": 85,
+      "science": 75
+    },
+    {
+      "id": 3,
+      "name": "Sivs",
+      "rollnumber": 103,
+      "english": 65,
+      "maths": 55,
+      "generalawarness": 65,
+      "science": 65
+    }
+  ]
+}

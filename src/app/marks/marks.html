@@ -1,0 +1,86 @@
+<div class="container">
+  <h2>MarkSheet Lookup</h2>
+
+  <form [formGroup]="marksheetform" (ngSubmit)="getMarks()">
+    <div class="inputs">
+      <label>Name</label>
+      <input type="text" formControlName="name" placeholder="Enter name" />
+    </div>
+    @if (marksheetform.controls['name']?.dirty || marksheetform.controls['name']?.touched) {
+      @if (marksheetform.controls['name']?.errors?.['required']) {
+        <small class="show">The name field is required</small>
+      }
+    }
+
+    <div class="inputs">
+      <label>Roll number</label>
+      <input type="text" formControlName="roll" placeholder="Enter roll number" />
+    </div>
+    @if (marksheetform.controls['roll']?.dirty || marksheetform.controls['roll']?.touched) {
+      @if (marksheetform.controls['roll']?.errors?.['required']) {
+        <small class="show">The rol number field is required</small>
+      }
+    }
+    <div class="btn">
+      <div class="inputs">
+        <button type="submit" [disabled]="marksheetform.invalid">Submit</button>
+      </div>
+      <div class="inputs">
+        <button type="button" class="reset" (click)="Reset()">Reset</button>
+      </div>
+    </div>
+  </form>
+  @if (loading()) {
+    <div>Loading...</div>
+  } @else {
+    @if (show) {
+      @if (marks().length > 0) {
+        <!-- <div *ngFor="let mark of marks()" class="marks"> -->
+        <div class="marks">
+          @for (mark of marks(); track mark.id) {
+            <div class="candidate">
+              <p>Name:{{ mark.name }}</p>
+              <p>Roll no:{{ mark.rollnumber }}</p>
+            </div>
+            <div class="score">
+              <div class="content">
+                <label>English</label>
+                <p>{{ mark.english }}</p>
+              </div>
+              <div class="main">
+                <div class="eng" [style.width]="animateBar() ? mark.english + '%' : '0%'"></div>
+              </div>
+              <div class="content">
+                <label>Science</label>
+                <p>{{ mark.science }}</p>
+              </div>
+              <div class="main">
+                <div class="science" [style.width]="animateBar() ? mark.science + '%' : '0%'"></div>
+              </div>
+              <div class="content">
+                <label>Maths</label>
+                <p>{{ mark.maths }}</p>
+              </div>
+              <div class="main">
+                <div class="maths" [style.width]="animateBar() ? mark.maths + '%' : '0%'"></div>
+              </div>
+              <div class="content">
+                <label>Science</label>
+                <p>{{ mark.generalawarness }}</p>
+              </div>
+              <div class="main">
+                <div
+                  class="generalawarness"
+                  [style.width]="animateBar() ? mark.generalawarness + '%' : '0%'"
+                ></div>
+              </div>
+            </div>
+          }
+        </div>
+      }
+    }
+    @if (marks().length == 0 && isFetched && show) {
+      <p class="error">No Record found</p>
+    }
+  }
+</div>

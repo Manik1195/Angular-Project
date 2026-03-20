@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="heading">
+    <div class="icon">
+      <i class="bi bi-person-workspace"></i>
+    </div>
+    <h2>Employee Detail</h2>
+  </div>
+
+  <div *ngIf="loading()">Loading...</div>
+
+  <div *ngIf="!loading() && dummyData() as user" class="data">
+    <div class="lbl">
+      <label>Name</label>
+      <label>Salary</label>
+      <label>Role</label>
+    </div>
+    <div class="value">
+      <div class="name">
+        <p>{{ user.name }}</p>
+      </div>
+      <div class="salary">
+        <p>{{ user.salary | currency: 'INR' }}</p>
+      </div>
+      <div class="role">
+        <p>{{ user.Role }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="btn">
+    <button (click)="close()">Close <i class="bi bi-x-square"></i></button>
+  </div>
+</div>

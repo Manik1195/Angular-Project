@@ -1,34 +1,34 @@
 {
   "Users": [
     {
-      "id": 1,
       "name": "Manik",
-      "salary": 50000,
-      "Role": "Front End developer"
+      "salary": "60000",
+      "Role": "Angular developer",
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Vichu",
-      "salary": 100000,
-      "Role": "QA Automation"
+      "name": "Vishwa",
+      "salary": "100000",
+      "Role": "QA Automation",
+      "id": 2
     },
     {
-      "id": 3,
-      "name": "Mega",
-      "salary": 50000,
-      "Role": "Java Spring boot developer"
-    },
-    {
-      "id": 4,
       "name": "Bala",
-      "salary": 100000,
-      "Role": "Python developer"
+      "salary": "100000",
+      "Role": "Python Developer",
+      "id": 4
+    },
+    {
+      "name": "Mega",
+      "salary": "50000",
+      "Role": "Java Spring boot developer",
+      "id": 5
     },
     {
       "name": "Sivs",
       "salary": "30000",
       "Role": "Manual Tester",
-      "id": 5
+      "id": 6
     }
   ]
 }

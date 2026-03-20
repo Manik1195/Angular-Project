@@ -1,0 +1,59 @@
+<div class="container">
+  <form [formGroup]="registerform" (ngSubmit)="submit()">
+    <div class="main">
+      <h2>Register</h2>
+
+      <div class="inputs">
+        <label>Name</label>
+        <input type="text" placeholder="Enter name" formControlName="name" />
+      </div>
+      @if (registerform.controls['name']?.dirty || registerform.controls['name']?.touched) {
+        @if (registerform.controls['name']?.errors?.['required']) {
+          <small class="error">Name field is required</small>
+        }
+      }
+      <div class="inputs">
+        <label>Email</label>
+        <input type="text" placeholder="Enter Email" formControlName="email" />
+      </div>
+      @if (registerform.controls['email']?.dirty || registerform.controls['email']?.touched) {
+        @if (registerform.controls['email']?.errors?.['required']) {
+          <small class="error">Email field is required</small>
+        }
+        @if (registerform.controls['email']?.errors?.['email']) {
+          <small class="error">Email should be in @gmail format</small>
+        }
+      }
+      <div class="inputs">
+        <label>Password</label>
+        <input type="text" placeholder="Enter Password" formControlName="password" />
+      </div>
+      @if (registerform.controls['password']?.dirty || registerform.controls['password']?.touched) {
+        @if (registerform.controls['password']?.errors?.['required']) {
+          <small class="error">Password field is required</small>
+        }
+        @if (registerform.controls['password']?.errors?.['minlength']) {
+          <small class="error">The password should contain atleast 6 characters</small>
+        }
+      }
+      <div class="inputs">
+        <label>Mobile Number</label>
+        <input type="text" placeholder="Enter mobile number" formControlName="mobilenumber" />
+      </div>
+      @if (
+        registerform.controls['mobilenumber']?.dirty ||
+        registerform.controls['mobilenumber']?.touched
+      ) {
+        @if (registerform.controls['mobilenumber']?.errors?.['required']) {
+          <small class="error">Mobile Number field is required</small>
+        }
+        @if (registerform.controls['mobilenumber']?.errors?.['maxlength']) {
+          <small class="error">The mobile number should not exceeds 10 characters</small>
+        }
+      }
+      <div class="inputs-btn">
+        <button [disabled]="registerform.invalid">Register</button>
+      </div>
+    </div>
+  </form>
+</div>

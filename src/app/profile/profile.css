@@ -20,13 +20,14 @@
 
 .modern-table thead {
   background: linear-gradient(135deg, #5bcbc6ed, #9f66d9db);
-  color: white;
+  /* background-color: #444; */
+  color: #eee;
 }
 
 .modern-table th {
   padding: 14px;
   text-align: left;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .modern-table td {
@@ -40,13 +41,13 @@
 }
 
 .name {
-  font-weight: 600;
+  font-weight: 500;
   color: #222;
 }
 
 .salary {
   color: #16a34a;
-  font-weight: bold;
+  font-weight: 500;
 }
 
 .role-badge {
@@ -66,9 +67,11 @@
   border: none;
   outline: none;
   padding: 10px;
+  margin-bottom: 10px;
   border-radius: 5px;
-  color: #fff;
-  background-color: #009688;
+  color: #009688;
+  background-color: #fff;
+  border: 3px solid #009688;
   width: 150px;
 }
 .edit {
@@ -82,13 +85,29 @@
   border-image: linear-gradient(45deg, #4caf50, #8bc34a, #009688) 1;
   width: 100px;
 }
+.view {
+  border: none;
+  outline: none;
+  padding: 5px;
+  color: #717070;
+  border-radius: 5px;
+  background-color: #fff;
+  border: 3px solid;
+  border-image: linear-gradient(45deg, #988282, #b0bec5, #bdbdbd) 1;
+  width: 100px;
+}
+
 .delete {
   border: none;
   outline: none;
   padding: 5px;
+  color: #e91616;
   background-color: #fff;
   border: 3px solid;
   border-radius: 10px;
   border-image: linear-gradient(45deg, #ff5722, #f44336, #f48fb1) 1;
   width: 100px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
 }

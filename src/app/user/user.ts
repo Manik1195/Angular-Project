@@ -11,10 +11,12 @@ import {
   SimpleChanges,
 } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
+import { RegisterService } from '../register-service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-user',
-  imports: [RouterLink],
+  imports: [RouterLink, ReactiveFormsModule],
   templateUrl: './user.html',
   styleUrl: './user.css',
 })
@@ -29,8 +31,16 @@ export class User
     AfterViewChecked,
     OnDestroy
 {
-  constructor(private router: Router) {
-    console.log('constructor called');
+  loginForm: FormGroup;
+  constructor(
+    private router: Router,
+    private reg: RegisterService,
+    private fb: FormBuilder,
+  ) {
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+    });
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log('1.nogOnChanges called');
@@ -58,10 +68,22 @@ export class User
   }
 
   click() {
-    this.router.navigate(['demo']);
-  }
+    const username = this.loginForm.value.username;
+    const password = this.loginForm.value.password;
+    this.reg.ValidateUser(username, password).subscribe((res) => {
+      if (res.length > 0) {
+        alert('Login Success');
+        this.router.navigateByUrl('profile');
+      } else {
+        alert('Invalid username or password');
+      }
+    });
+  }   
   isClicked: boolean = false;
   perform() {
     this.isClicked = true;
+  }
+  register() {
+    this.router.navigateByUrl('register');
   }
 }

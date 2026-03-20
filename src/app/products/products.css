@@ -1,0 +1,53 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: 1200px;
+  margin: auto;
+  margin-top: 50px;
+}
+.name,
+.color,
+.category,
+.price {
+  display: flex;
+  gap: 10px;
+}
+label {
+  width: 130px;
+  color: #858484;
+  font-family: 'Roboto';
+  font-weight: 600;
+}
+p {
+  font-family: 'Montserrat';
+  font-weight: 600;
+}
+.image {
+  background: #444;
+  height: 200px;
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+.image h2 {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  color: #eee;
+}
+.main {
+  display: flex;
+  flex-flow: column;
+  width: 370px;
+  /* border: 1px solid #eee; */
+  border-radius: 10px;
+  box-shadow: 0px 10px 15px #eee;
+}
+.item {
+  padding: 20px 10px;
+  display: flex;
+  flex-flow: column;
+  gap: 10px;
+}

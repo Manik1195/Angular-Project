@@ -11,6 +11,10 @@ import { ReactiveForm } from './reactive-form/reactive-form';
 import { Profile } from './profile/profile';
 import { AddUser } from './add-user/add-user';
 import { Updateuser } from './updateuser/updateuser';
+import { Viewuser } from './viewuser/viewuser';
+import { Marks } from './marks/marks';
+import { Products } from './products/products';
+import { Register } from './register/register';
 
 export const routes: Routes = [
   { path: 'demo', component: Demo },
@@ -23,5 +27,9 @@ export const routes: Routes = [
   { path: 'rform', component: ReactiveForm },
   { path: 'adduser', component: AddUser },
   { path: 'updateuser/:id', component: Updateuser },
+  { path: 'viewuser/:id', component: Viewuser },
+  { path: 'marks', component: Marks },
+  { path: 'products', component: Products },
+  { path: 'register', component: Register },
   { path: '**', component: PageNotFound },
 ];
